@@ -1,5 +1,5 @@
 
-   var stack= [];
+  var stack= [];
 
 function StackClassConstructor() {
     var o = Object.create(StackClass);
@@ -10,24 +10,33 @@ function StackClassConstructor() {
 var StackClass = {
 
     push: function(element) {
-        this.stack.push(element);
+        stack.push(element);
     },
 
     pop: function() {
-        return this.stack.pop();
+        return stack.pop();
     },
 
-    peek: function() {
-        return this.stack[this.stack.length - 1];
-    }
+    last: function() {
+        return stack[stack.length - 1];
+    },
 
+
+    first: function() {
+        return stack[0];
+    },
+
+    all: function() {
+        return stack;
+    }
 }
 
 
 var st = StackClassConstructor();
-
-st.push('a');
-st.push('b');
+ 
+st.push('a'); 
+st.push('b'); 
 st.push('c'); 
+console.log(st.all());
 st.pop();
-console.log(st.peek());
+console.log(st.last());
